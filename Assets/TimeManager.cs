@@ -17,6 +17,7 @@ public class TimeManager : MonoBehaviour
             timer -= Time.deltaTime;
             if(timer < 0) {
                 GameManager.instance.UpdateGameState(GameState.GAMEOVER);
+                AudioManager.instance.PlaySFX("PlayerDeath");
             }
         }
     }
