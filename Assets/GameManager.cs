@@ -46,10 +46,6 @@ public class GameManager : MonoBehaviour {
     }
 
     public void RollDiceBattle() {
-        Invoke(nameof(DelayDice), 1f);
-    }
-
-    private void DelayDice() {
         int playerDice = UnityEngine.Random.Range(1, 7);
         int enemyDice = UnityEngine.Random.Range(1, 7);
 
