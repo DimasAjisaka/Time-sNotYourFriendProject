@@ -331,6 +331,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f3736aa087036c440b7cab5d605e7b7c, type: 3}
   - name: Click
     clip: {fileID: 8300000, guid: 65e59af1e98ae6c44b22036a9463fe38, type: 3}
+  - name: Kick
+    clip: {fileID: 8300000, guid: 66a5cb34ba2e3d74b8e7ce11fadbd60c, type: 3}
   bgmSource: {fileID: 2472303211536311730}
   sfxSource: {fileID: 2806215877405236271}
 --- !u!114 &8179155808016206764
