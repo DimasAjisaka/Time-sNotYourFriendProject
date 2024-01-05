@@ -51,7 +51,13 @@ public class PlayerController : MonoBehaviour {
         }
 
         transform.position = targetPos;
-
         isMoving = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        Debug.Log("test");
+        if (collision.gameObject.CompareTag("Enemy")) {
+            Debug.Log("test");
+        }
     }
 }
