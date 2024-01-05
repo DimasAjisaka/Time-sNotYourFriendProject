@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
     public LayerMask obstacleLayer; // Layer for obstacles
 
     private void Start() {
+        AudioManager.instance.PlayBGM("Battle");
     }
 
     private void Update() {

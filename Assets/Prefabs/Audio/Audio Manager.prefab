@@ -303,8 +303,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10220530ca1d4a84bb4905c35f9ffe3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmAudio: []
-  sfxAudio: []
+  bgmAudio:
+  - name: MainMenu
+    clip: {fileID: 8300000, guid: 8e8d52c1c430c4543a2bb82efa4aff56, type: 3}
+  - name: Battle
+    clip: {fileID: 8300000, guid: d2a7edcbd7a299d4caf5df2e9a35223a, type: 3}
+  sfxAudio:
+  - name: PlayerDeath
+    clip: {fileID: 8300000, guid: 7246b154051585041970401be769263c, type: 3}
   bgmSource: {fileID: 2472303211536311730}
   sfxSource: {fileID: 2806215877405236271}
 --- !u!114 &8179155808016206764
