@@ -71,10 +71,12 @@ public class PlayerController : MonoBehaviour {
         Vector3 targetPosition = originalPosition + direction; // Adjust direction as needed
         float pushTime = 0.2f; // Adjust as needed
         float pushElapsedTime = 0;
-
+        obstacle.GetComponent<BoxCollider2D>().enabled = false;
         // Raycast to check for obstacles in the push direction
         RaycastHit2D hit = Physics2D.Raycast(originalPosition, direction, 1f, envLayer);
-        if (hit.collider.gameObject.CompareTag("Wall")) {
+
+        obstacle.GetComponent<BoxCollider2D>().enabled = true;
+        if (hit.collider != null) {
             Debug.Log(hit.collider.gameObject.name);
             // There is an obstacle in the push direction, stop pushing
             isMoving = false;
