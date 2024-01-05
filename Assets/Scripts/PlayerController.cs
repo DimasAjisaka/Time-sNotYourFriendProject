@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool isMoving = false;
+    private bool isMoving = false;
     private Vector3 origPos, targerPos;
-    public float timeToMove = 0.2f;
+    private float timeToMove = 0.2f;
 
     private void Update()
     {
