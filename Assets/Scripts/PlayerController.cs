@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     private bool isMoving = false;
     private Vector3 origPos, targetPos;
-    private float timeToMove = 0.2f;
+    [SerializeField] private float timeToMove = 0.2f;
     public LayerMask obstacleLayer; // Layer for obstacles
 
     private void Start() {
