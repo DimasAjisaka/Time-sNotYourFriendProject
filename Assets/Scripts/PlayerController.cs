@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
     private Vector3 origPos, targetPos;
     [SerializeField] private float timeToMove = 0.2f;
     public LayerMask obstacleLayer; // Layer for obstacles
+    public bool isKeyPicked = false;
 
     private void Start() {
         AudioManager.instance.PlayBGM("Battle");
