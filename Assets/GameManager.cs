@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour {
                 break;
 
             case GameState.BATTLE:
+                AudioManager.instance.PlaySFX("PlayerAsk");
                 break;
 
             case GameState.GAMEOVER:

@@ -257,6 +257,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &69323823 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3404413331405674792, guid: 304ae76a5c9347241b60b924141385ae, type: 3}
+  m_PrefabInstance: {fileID: 1611105076}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10220530ca1d4a84bb4905c35f9ffe3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &84041931
 GameObject:
   m_ObjectHideFlags: 0
@@ -3051,6 +3062,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 69323823}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PlayerEscape
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1171910057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3258,6 +3281,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 69323823}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PlayerBattle
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1418552818
@@ -3654,7 +3689,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae0ff612b20af74dbda54d953486cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isAlive: 0
 --- !u!58 &1765120124
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4199,7 +4233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae0ff612b20af74dbda54d953486cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isAlive: 0
 --- !u!58 &2106977454
 CircleCollider2D:
   m_ObjectHideFlags: 0
