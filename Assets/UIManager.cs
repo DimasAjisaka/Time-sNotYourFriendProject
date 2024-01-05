@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject startButton;
     [SerializeField] private GameObject restartPanel;
+    [SerializeField] private GameObject battlePanel;
 
     private void Awake() {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
@@ -26,9 +27,11 @@ public class UIManager : MonoBehaviour
     private void GameManagerOnGameStateChanged(GameState state) {
         startButton.SetActive(state == GameState.WAIT);
 
-        _timerText.gameObject.SetActive(state == GameState.START);
+        _timerText.gameObject.SetActive(state == GameState.START || state == GameState.BATTLE);
 
         restartPanel.SetActive(state == GameState.GAMEOVER);
+
+        battlePanel.SetActive(state == GameState.BATTLE);
     }
 
     public void StartButtonClicked() {

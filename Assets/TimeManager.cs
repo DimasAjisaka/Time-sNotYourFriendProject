@@ -13,7 +13,7 @@ public class TimeManager : MonoBehaviour
         instance = this;
     }
     private void Update() {
-        if (GameManager.instance.state == GameState.START) {
+        if (GameManager.instance.state == GameState.START || GameManager.instance.state == GameState.BATTLE) {
             timer -= Time.deltaTime;
             if(timer < 0) {
                 GameManager.instance.UpdateGameState(GameState.GAMEOVER);

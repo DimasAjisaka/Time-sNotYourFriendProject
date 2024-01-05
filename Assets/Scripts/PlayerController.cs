@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float timeToMove = 0.2f;
     public LayerMask obstacleLayer; // Layer for obstacles
 
+    private Collider2D currentEnemy;
     private void Start() {
         AudioManager.instance.PlayBGM("Battle");
     }
@@ -55,9 +56,13 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        Debug.Log("test");
         if (collision.gameObject.CompareTag("Enemy")) {
-            Debug.Log("test");
+            currentEnemy = collision;
+            GameManager.instance.UpdateGameState(GameState.BATTLE);
         }
+    }
+
+    public void KillEnemy() {
+       Destroy(currentEnemy.gameObject);
     }
 }
