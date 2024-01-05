@@ -311,6 +311,16 @@ MonoBehaviour:
   sfxAudio:
   - name: PlayerDeath
     clip: {fileID: 8300000, guid: 7246b154051585041970401be769263c, type: 3}
+  - name: PlayerLose
+    clip: {fileID: 8300000, guid: 5f120586af1d6934a901b5310fb34288, type: 3}
+  - name: PlayerAsk
+    clip: {fileID: 8300000, guid: a318c7d3ac594c4478d74c3451d9f743, type: 3}
+  - name: PlayerWin
+    clip: {fileID: 8300000, guid: cb2ac10a03578cd4c8190e92af4891ed, type: 3}
+  - name: PlayerBattle
+    clip: {fileID: 8300000, guid: 2231ccd93447a7b40b7d7f2b599152b2, type: 3}
+  - name: PlayerEscape
+    clip: {fileID: 8300000, guid: 59bdfb7a6c1c1604ca70aef1e031e8d0, type: 3}
   bgmSource: {fileID: 2472303211536311730}
   sfxSource: {fileID: 2806215877405236271}
 --- !u!114 &8179155808016206764
