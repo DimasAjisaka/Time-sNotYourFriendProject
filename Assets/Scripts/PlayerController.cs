@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour {
     private bool isMoving = false;
     private Vector3 origPos, targetPos;
     [SerializeField] private float timeToMove = 0.2f;
-    public LayerMask obstacleLayer; // Layer for obstacles
+    public LayerMask envLayer; // Layer for obstacles
     public bool isKeyPicked = false;
 
     private Collider2D currentEnemy;
@@ -39,22 +39,59 @@ public class PlayerController : MonoBehaviour {
         targetPos = origPos + direction;
 
         // Raycast to check for obstacles
-        RaycastHit2D hit = Physics2D.Raycast(origPos, direction, 1f, obstacleLayer);
+        RaycastHit2D hit = Physics2D.Raycast(origPos, direction, 1f, envLayer);
         if (hit.collider != null) {
-            // There is an obstacle, don't move
-            isMoving = false;
+            // There is an environment, don't move
+            HandleObstacle(hit.collider.gameObject, direction);
             yield break;
         }
-
         while (elapsedTime < timeToMove) {
             transform.position = Vector3.Lerp(origPos, targetPos, (elapsedTime / timeToMove));
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
         transform.position = targetPos;
         isMoving = false;
     }
+
+    private void HandleObstacle(GameObject obstacle, Vector3 direction) {
+        if (obstacle.CompareTag("Wall")) {
+            // The player cannot move through the wall
+            isMoving = false;
+            Debug.Log("Cannot move through the wall!");
+        } else if (obstacle.CompareTag("Obstacle")) {
+            // Push the obstacle if colliding with an obstacle
+            StartCoroutine(PushObstacle(obstacle, direction));
+        }
+    }
+
+    private IEnumerator PushObstacle(GameObject obstacle, Vector3 direction) {
+        Debug.Log(direction);
+        Vector3 originalPosition = obstacle.transform.position;
+        Vector3 targetPosition = originalPosition + direction; // Adjust direction as needed
+        float pushTime = 0.2f; // Adjust as needed
+        float pushElapsedTime = 0;
+
+        // Raycast to check for obstacles in the push direction
+        RaycastHit2D hit = Physics2D.Raycast(originalPosition, direction, 1f, envLayer);
+        if (hit.collider.gameObject.CompareTag("Wall")) {
+            Debug.Log(hit.collider.gameObject.name);
+            // There is an obstacle in the push direction, stop pushing
+            isMoving = false;
+            yield break;
+        }
+
+        while (pushElapsedTime < pushTime) {
+            obstacle.transform.position = Vector3.Lerp(originalPosition, targetPosition, (pushElapsedTime / pushTime));
+            pushElapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        obstacle.transform.position = targetPosition;
+        isMoving = false;
+    }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Enemy")) {
