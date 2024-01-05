@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     void GetPlayerInput() {
-        if(GameManager.instance.state == GameState.START) {
+        if (GameManager.instance.state == GameState.START) {
             if (Input.GetKeyDown(KeyCode.W) && !isMoving)
                 StartCoroutine(MovePlayer(Vector3.up));
             if (Input.GetKeyDown(KeyCode.A) && !isMoving)
@@ -60,10 +60,13 @@ public class PlayerController : MonoBehaviour {
         if (collision.gameObject.CompareTag("Enemy")) {
             currentEnemy = collision;
             GameManager.instance.UpdateGameState(GameState.BATTLE);
+        } else if (collision.gameObject.CompareTag("Collectable")) {
+            TimeManager.instance.timer += collision.gameObject.GetComponent<Collectable>().collectableValue;
+            Destroy(collision.gameObject);
         }
     }
 
     public void KillEnemy() {
-       Destroy(currentEnemy.gameObject);
+        Destroy(currentEnemy.gameObject);
     }
 }

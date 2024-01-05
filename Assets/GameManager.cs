@@ -53,14 +53,18 @@ public class GameManager : MonoBehaviour {
             UpdateGameState(GameState.START);
 
             //add player time based on dice
-            TimeManager.instance.timer += playerDice * 2;
+            TimeManager.instance.timer += (playerDice - enemyDice) * 2;
+            Debug.Log("+Time = " + (playerDice - enemyDice) * 2);
 
-            Debug.Log("+Time = " + (playerDice * 2));
+            AudioManager.instance.PlaySFX("PlayerWin");
         } else {
             Debug.Log("playerlos");
             UpdateGameState(GameState.START);
-            TimeManager.instance.timer -= playerDice * 2;
-            Debug.Log("-Time = " + (playerDice * 2));
+            TimeManager.instance.timer -= (enemyDice - playerDice) * 2;
+            Debug.Log("-Time = " + (enemyDice - playerDice) * 2);
+
+            AudioManager.instance.PlaySFX("PlayerLose");
+
         }
     }
 }
