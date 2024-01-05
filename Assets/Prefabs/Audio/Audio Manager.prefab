@@ -321,6 +321,16 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 2231ccd93447a7b40b7d7f2b599152b2, type: 3}
   - name: PlayerEscape
     clip: {fileID: 8300000, guid: 59bdfb7a6c1c1604ca70aef1e031e8d0, type: 3}
+  - name: PlayerStep
+    clip: {fileID: 8300000, guid: fcf1d4c1bde398d45a1b7d49a45cbc4d, type: 3}
+  - name: GetKey
+    clip: {fileID: 8300000, guid: caaa1b84b2ad90942b0145e76fb4f433, type: 3}
+  - name: KeyUnlock
+    clip: {fileID: 8300000, guid: fc85edecc0aaadd4eb014a81c6a4a986, type: 3}
+  - name: DoorOpen
+    clip: {fileID: 8300000, guid: f3736aa087036c440b7cab5d605e7b7c, type: 3}
+  - name: Click
+    clip: {fileID: 8300000, guid: 65e59af1e98ae6c44b22036a9463fe38, type: 3}
   bgmSource: {fileID: 2472303211536311730}
   sfxSource: {fileID: 2806215877405236271}
 --- !u!114 &8179155808016206764
