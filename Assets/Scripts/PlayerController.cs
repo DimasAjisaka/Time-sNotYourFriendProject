@@ -59,6 +59,11 @@ public class PlayerController : MonoBehaviour {
             // The player cannot move through the wall
             isMoving = false;
             Debug.Log("Cannot move through the wall!");
+        }
+        if (obstacle.CompareTag("Enemy")) {
+            // The player cannot move through the wall
+            isMoving = false;
+            Debug.Log("Cannot move through the enemy!");
         } else if (obstacle.CompareTag("Obstacle")) {
             // Push the obstacle if colliding with an obstacle
             StartCoroutine(PushObstacle(obstacle, direction));
