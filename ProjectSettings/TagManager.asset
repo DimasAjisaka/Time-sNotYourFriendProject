@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Wall
+  - Enemy
+  - Collectable
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -11,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Environment
   - 
   - 
   - 
@@ -40,4 +44,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Chara
+    uniqueID: 1245039857
+    locked: 0
+  - name: Background
+    uniqueID: 3366826675
+    locked: 0
+  - name: Environment
+    uniqueID: 4053621391
+    locked: 0
+  - name: UI
+    uniqueID: 2237567193
     locked: 0
