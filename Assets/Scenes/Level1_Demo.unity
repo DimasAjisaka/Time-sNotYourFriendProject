@@ -3099,7 +3099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53887be63af88eb44b162799fe48ffe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 50
+  timer: 13
   startShaking: 10
 --- !u!4 &1116111308
 Transform:
@@ -3538,6 +3538,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2472303211536311730, guid: 304ae76a5c9347241b60b924141385ae, type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9018290598400929049, guid: 304ae76a5c9347241b60b924141385ae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
