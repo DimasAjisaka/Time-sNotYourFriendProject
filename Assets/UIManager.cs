@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
     }
 
     private void Update() {
-        _timerText.SetText(TimeManager.instance.timer.ToString("#"));
+        _timerText.SetText(TimeManager.instance.timer.ToString("0"));
     }
 
     private void GameManagerOnGameStateChanged(GameState state) {
