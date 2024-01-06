@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private IEnumerator MovePlayer(Vector3 direction) {
+        Teleport.isTeleporting = false;
         isMoving = true;
 
         float elapsedTime = 0;
