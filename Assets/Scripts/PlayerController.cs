@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     public bool isMoving = false;
-    private Vector3 origPos, targetPos;
+    private Vector3 origPos, targetPos, lastPos;
     [SerializeField] private float timeToMove = 0.2f;
     [SerializeField] private float pushBoxTime = 0.2f;
     public LayerMask envLayer; // Layer for obstacles
@@ -52,8 +52,31 @@ public class PlayerController : MonoBehaviour {
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+        lastPos = origPos;
         transform.position = targetPos;
         isMoving = false;
+    }
+    public IEnumerator KnockBackPlayer(Vector3 direction)
+    {
+        isMoving = true;
+        float elapsedTime = 0;
+        origPos = transform.position;
+
+        AudioManager.instance.PlayEnviFeedback("PlayerStep");
+        while (elapsedTime < timeToMove)
+        {
+            transform.position = Vector3.Lerp(origPos, lastPos, (elapsedTime / timeToMove));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        isMoving = false;
+    }
+    
+    public void KnockPlayer()
+    {
+        StartCoroutine(KnockBackPlayer(lastPos));
     }
 
     private void HandleObstacle(GameObject obstacle, Vector3 direction) {

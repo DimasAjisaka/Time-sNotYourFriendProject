@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour {
                 Debug.Log("-Time = " + (enemyDice - playerDice) * 2);
 
                 AudioManager.instance.PlayPlayerVoice("PlayerLose");
+                playerController.KnockPlayer();
             } else {
                 StartCoroutine(RollingDice(0));
                 yield break;
@@ -120,6 +121,7 @@ public class GameManager : MonoBehaviour {
                 Debug.Log("-Time = " + (enemyDice - playerDice) * 2);
 
                 AudioManager.instance.PlayPlayerVoice("PlayerLose");
+                playerController.KnockPlayer();
             } else {
                 StartCoroutine(RollingDice(1));
                 yield break;
