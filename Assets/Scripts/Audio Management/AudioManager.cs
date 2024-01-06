@@ -63,6 +63,6 @@ public class AudioManager : MonoBehaviour {
         Sound enviFeedback = Array.Find(enviFeedbackAudio, x => x.name == name);
         if (enviFeedback == null) {
             Debug.Log("SFX Not Found!");
-        } else { playerVoiceSource.PlayOneShot(enviFeedback.clip); }
+        } else { enviFeedbackSource.PlayOneShot(enviFeedback.clip); }
     }
 }
