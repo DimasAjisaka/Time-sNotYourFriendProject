@@ -24,21 +24,27 @@ public class AudioController : MonoBehaviour {
     }
 
     public void MasterVolume() {
-        float volume = _masterSlider.value;
-        _audioMixer.SetFloat("MasterParams", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("masterVolume", volume);
+        if (_masterSlider != null) {
+            float volume = _masterSlider.value;
+            _audioMixer.SetFloat("MasterParams", Mathf.Log10(volume) * 20);
+            PlayerPrefs.SetFloat("masterVolume", volume);
+        } else { Debug.Log("Slider Not Find!"); }
     }
 
     public void BgmVolume() {
-        float volume = _bgmSlider.value;
-        _audioMixer.SetFloat("BGMParams", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("bgmVolume", volume);
+        if (_bgmSlider != null) {
+            float volume = _bgmSlider.value;
+            _audioMixer.SetFloat("BGMParams", Mathf.Log10(volume) * 20);
+            PlayerPrefs.SetFloat("bgmVolume", volume);
+        } else { Debug.Log("Slider Not Find!"); }
     }
 
     public void SfxVolume() {
-        float volume = _sfxSlider.value;
-        _audioMixer.SetFloat("SFXParams", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("sfxVolume", volume);
+        if (_sfxSlider != null) {
+            float volume = _sfxSlider.value;
+            _audioMixer.SetFloat("SFXParams", Mathf.Log10(volume) * 20);
+            PlayerPrefs.SetFloat("sfxVolume", volume);
+        } else { Debug.Log("Slider Not Find!"); }
     }
 
     private void LoadVolume() {
