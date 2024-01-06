@@ -131,6 +131,7 @@ public class PlayerController : MonoBehaviour {
             currentEnemy = collision;
             GameManager.instance.UpdateGameState(GameState.BATTLE);
         } else if (collision.gameObject.CompareTag("Collectable")) {
+            AudioManager.instance.PlayEnviFeedback("Antidot");
             TimeManager.instance.timer += collision.gameObject.GetComponent<Collectable>().collectableValue;
             Destroy(collision.gameObject);
         }

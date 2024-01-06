@@ -698,8 +698,8 @@ MonoBehaviour:
   sfxAudio:
   - name: Click
     clip: {fileID: 8300000, guid: 65e59af1e98ae6c44b22036a9463fe38, type: 3}
-  - name: Kick
-    clip: {fileID: 8300000, guid: 66a5cb34ba2e3d74b8e7ce11fadbd60c, type: 3}
+  - name: RollDice
+    clip: {fileID: 8300000, guid: fd3e9ac642a4b964aa4ba9f88ce7c167, type: 3}
   playerVoiceAudio:
   - name: PlayerDeath
     clip: {fileID: 8300000, guid: 7246b154051585041970401be769263c, type: 3}
@@ -725,6 +725,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6f1f0f153cbbbe048878aa92079e9a4a, type: 3}
   - name: Kick
     clip: {fileID: 8300000, guid: 66a5cb34ba2e3d74b8e7ce11fadbd60c, type: 3}
+  - name: Antidot
+    clip: {fileID: 8300000, guid: 14222fa7efb1f9c4088d504e335da8bf, type: 3}
   bgmSource: {fileID: 2472303211536311730}
   sfxSource: {fileID: 2806215877405236271}
   playerVoiceSource: {fileID: 7648817272328083696}
