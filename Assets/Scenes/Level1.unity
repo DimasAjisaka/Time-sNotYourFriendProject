@@ -2157,7 +2157,7 @@ GameObject:
   - component: {fileID: 584011882}
   - component: {fileID: 584011881}
   - component: {fileID: 584011880}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3064,7 +3064,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 69323823}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySFX
+        m_MethodName: PlayPlayerVoice
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3285,7 +3285,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 69323823}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySFX
+        m_MethodName: PlayPlayerVoice
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3670,7 +3670,7 @@ GameObject:
   - component: {fileID: 1765120125}
   - component: {fileID: 1765120124}
   - component: {fileID: 1765120123}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4214,7 +4214,7 @@ GameObject:
   - component: {fileID: 2106977455}
   - component: {fileID: 2106977454}
   - component: {fileID: 2106977453}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -14,6 +14,7 @@ public class Key : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             playerController.isKeyPicked = true;
+            AudioManager.instance.PlayUnlockLevel("GetKey");
             Debug.Log("Key Picked");
             Destroy(gameObject);
         }
