@@ -18,17 +18,22 @@ public class Spike : MonoBehaviour
 
     private void Awake()
     {
-        _renderer = GetComponentInChildren<SpriteRenderer>();
+        _renderer = GetComponent<SpriteRenderer>();
         _col = GetComponent<Collider2D>();
         playerController = FindObjectOfType<PlayerController>();
+
+        PlayerController.onPlayerMove += SpikeOnOff;
+    }
+    private void OnDestroy() {
+        PlayerController.onPlayerMove -= SpikeOnOff;
     }
 
     private void Update()
     {
-        if (playerController.isMoving && !isChanging && spikeType == SpikeType.Active)
-        {
-            StartCoroutine(ToggleSpikesCoroutine());
-        }
+        //if (playerController.isMoving && !isChanging && spikeType == SpikeType.Active)
+        //{
+        //    StartCoroutine(ToggleSpikesCoroutine());
+        //}
     }
 
     IEnumerator ToggleSpikesCoroutine()
@@ -55,11 +60,29 @@ public class Spike : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (isTrapActive)
-        {
+        //if (isTrapActive)
+        //{
             AudioManager.instance.PlayPlayerVoice("PlayerHurt");
             TimeManager.instance.timer -= timeDamage;
             Debug.Log("HIT SPIKE WOY");
+        //}
+    }
+
+
+    private void SpikeOnOff() {
+        StartCoroutine(SpikeOnOffIenum());
+    }
+    IEnumerator SpikeOnOffIenum() {
+        if (spikeType == SpikeType.Active & moveCount == 0) {
+            _col.enabled = false;
+            _renderer.color = Color.white;
+            moveCount++;
+            yield break;
+        } else {
+            yield return new WaitForSeconds(playerController.timeToMove);
+            _col.enabled = true;
+            _renderer.color = Color.red;
+            moveCount = 0;
         }
     }
 }

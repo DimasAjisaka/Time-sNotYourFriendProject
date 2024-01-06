@@ -1,15 +1,17 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     public bool isMoving = false;
     private Vector3 origPos, targetPos, lastPos;
-    [SerializeField] private float timeToMove = 0.2f;
+    public float timeToMove = 0.2f;
     [SerializeField] private float pushBoxTime = 0.2f;
     public LayerMask envLayer; // Layer for obstacles
     public bool isKeyPicked = false;
 
     private Collider2D currentEnemy;
+    public static event Action onPlayerMove;
     private void Start() {
         AudioManager.instance.PlayBGM("Battle");
     }
@@ -47,12 +49,14 @@ public class PlayerController : MonoBehaviour {
             yield break;
         }
         AudioManager.instance.PlayEnviFeedback("PlayerStep");
+
+        onPlayerMove?.Invoke();
+
         while (elapsedTime < timeToMove) {
             transform.position = Vector3.Lerp(origPos, targetPos, (elapsedTime / timeToMove));
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
         lastPos = origPos;
         transform.position = targetPos;
         isMoving = false;
