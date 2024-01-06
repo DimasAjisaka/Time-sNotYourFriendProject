@@ -9,9 +9,13 @@ public enum GameState {
 public class GameManager : MonoBehaviour {
     public static GameManager instance;
     public PlayerController playerController;
+    public UIManager uiManager;
+    public float diceRollingTime = 1f;
 
     public GameState state;
     public static event Action<GameState> OnGameStateChanged;
+
+    private bool isRollingDice = false;
 
     void Awake() {
         instance = this;
@@ -46,29 +50,84 @@ public class GameManager : MonoBehaviour {
     }
 
     public void RollDiceBattle() {
-        int playerDice = UnityEngine.Random.Range(1, 7);
-        int enemyDice = UnityEngine.Random.Range(1, 7);
+        StartCoroutine(RollingDice(0));
+    }
 
-        if (playerDice > enemyDice) {
-            playerController.KillEnemy();
-            UpdateGameState(GameState.START);
+    public void RollDiceEscape() {
+        StartCoroutine(RollingDice(1));
+    }
 
-            //add player time based on dice
-            TimeManager.instance.timer += (playerDice - enemyDice) * 2;
-            Debug.Log("+Time = " + (playerDice - enemyDice) * 2);
+    IEnumerator RollingDice(int state) {
+        isRollingDice = true;
+        uiManager.EnableDisableBattleButton(isRollingDice);
+        Debug.Log("coroutinecalled");
+        //battle
+        if (state == 0) {
+            yield return new WaitForSeconds(diceRollingTime);
+            int enemyDice = UnityEngine.Random.Range(1, 7);
+            Debug.Log("enemy dice = " + enemyDice);
 
-            AudioManager.instance.PlayPlayerVoice("PlayerWin");
-        } else {
-            Debug.Log("playerlos");
-            UpdateGameState(GameState.START);
-            TimeManager.instance.timer -= (enemyDice - playerDice) * 2;
-            Debug.Log("-Time = " + (enemyDice - playerDice) * 2);
+            yield return new WaitForSeconds(diceRollingTime);
+            int playerDice = UnityEngine.Random.Range(1, 7);
+            Debug.Log("player dice = " + playerDice);
 
-            AudioManager.instance.PlayPlayerVoice("PlayerLose");
+            yield return new WaitForSeconds(0.5f);
+            if (playerDice > enemyDice) {
+                playerController.KillEnemy();
+                UpdateGameState(GameState.START);
 
+                //add player time based on dice
+                TimeManager.instance.timer += (playerDice - enemyDice) * 2;
+                Debug.Log("+Time = " + (playerDice - enemyDice) * 2);
+
+                AudioManager.instance.PlayPlayerVoice("PlayerWin");
+            } else if (playerDice < enemyDice) {
+                Debug.Log("playerlos");
+                UpdateGameState(GameState.START);
+                TimeManager.instance.timer -= (enemyDice - playerDice) * 2;
+                Debug.Log("-Time = " + (enemyDice - playerDice) * 2);
+
+                AudioManager.instance.PlayPlayerVoice("PlayerLose");
+            } else {
+                StartCoroutine(RollingDice(0));
+                yield break;
+            }
+        } 
+        //escape
+        else {
+            yield return new WaitForSeconds(diceRollingTime);
+            int enemyDice = UnityEngine.Random.Range(1, 7);
+            Debug.Log("enemy dice = " + enemyDice);
+
+            yield return new WaitForSeconds(diceRollingTime);
+            int playerDice = UnityEngine.Random.Range(1, 7);
+            Debug.Log("player dice = " + playerDice);
+
+            yield return new WaitForSeconds(0.5f);
+            if (playerDice > enemyDice) {
+                playerController.KillEnemy();
+                UpdateGameState(GameState.START);
+
+                //add player time based on dice
+                TimeManager.instance.timer += (playerDice - enemyDice) * 2;
+                Debug.Log("+Time = " + (playerDice - enemyDice) * 2);
+
+                AudioManager.instance.PlayPlayerVoice("PlayerWin");
+            } else if (playerDice < enemyDice) {
+                Debug.Log("playerlos");
+                UpdateGameState(GameState.START);
+                TimeManager.instance.timer -= (enemyDice - playerDice) * 2;
+                Debug.Log("-Time = " + (enemyDice - playerDice) * 2);
+
+                AudioManager.instance.PlayPlayerVoice("PlayerLose");
+            } else {
+                StartCoroutine(RollingDice(1));
+                yield break;
+            }
         }
+        isRollingDice = false;
+        uiManager.EnableDisableBattleButton(isRollingDice);
     }
 }
-
 
 

@@ -2492,6 +2492,8 @@ MonoBehaviour:
   startButton: {fileID: 84041931}
   restartPanel: {fileID: 1302028191}
   battlePanel: {fileID: 635801050}
+  attackButton: {fileID: 1418552817}
+  escapeButton: {fileID: 1171910056}
 --- !u!114 &797258877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3052,7 +3054,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1486107286}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RollDiceBattle
+        m_MethodName: RollDiceEscape
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3363,6 +3365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1764237922}
+  uiManager: {fileID: 797258876}
+  diceRollingTime: 1
   state: 0
 --- !u!4 &1486107287
 Transform:

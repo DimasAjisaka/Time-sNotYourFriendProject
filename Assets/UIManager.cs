@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject startButton;
     [SerializeField] private GameObject restartPanel;
     [SerializeField] private GameObject battlePanel;
+
+    [SerializeField] private Button attackButton;
+    [SerializeField] private Button escapeButton;
 
     private void Awake() {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
@@ -41,6 +45,11 @@ public class UIManager : MonoBehaviour
     public void RestartButtonClicked() {
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
+    }
+
+    public void EnableDisableBattleButton(bool isRolling) {
+        attackButton.interactable = isRolling == false;
+        escapeButton.interactable = isRolling == false;
     }
 
 }
