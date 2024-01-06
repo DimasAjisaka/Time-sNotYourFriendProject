@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour {
                 break;
 
             case GameState.BATTLE:
-                AudioManager.instance.PlaySFX("PlayerAsk");
+                AudioManager.instance.PlayPlayerVoice("PlayerAsk");
                 break;
 
             case GameState.GAMEOVER:
@@ -57,14 +57,14 @@ public class GameManager : MonoBehaviour {
             TimeManager.instance.timer += (playerDice - enemyDice) * 2;
             Debug.Log("+Time = " + (playerDice - enemyDice) * 2);
 
-            AudioManager.instance.PlaySFX("PlayerWin");
+            AudioManager.instance.PlayPlayerVoice("PlayerWin");
         } else {
             Debug.Log("playerlos");
             UpdateGameState(GameState.START);
             TimeManager.instance.timer -= (enemyDice - playerDice) * 2;
             Debug.Log("-Time = " + (enemyDice - playerDice) * 2);
 
-            AudioManager.instance.PlaySFX("PlayerLose");
+            AudioManager.instance.PlayPlayerVoice("PlayerLose");
 
         }
     }

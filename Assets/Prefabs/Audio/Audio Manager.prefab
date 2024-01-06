@@ -309,6 +309,11 @@ MonoBehaviour:
   - name: Battle
     clip: {fileID: 8300000, guid: d2a7edcbd7a299d4caf5df2e9a35223a, type: 3}
   sfxAudio:
+  - name: Click
+    clip: {fileID: 8300000, guid: 65e59af1e98ae6c44b22036a9463fe38, type: 3}
+  - name: Kick
+    clip: {fileID: 8300000, guid: 66a5cb34ba2e3d74b8e7ce11fadbd60c, type: 3}
+  playerVoiceAudio:
   - name: PlayerDeath
     clip: {fileID: 8300000, guid: 7246b154051585041970401be769263c, type: 3}
   - name: PlayerLose
@@ -321,20 +326,23 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 2231ccd93447a7b40b7d7f2b599152b2, type: 3}
   - name: PlayerEscape
     clip: {fileID: 8300000, guid: 59bdfb7a6c1c1604ca70aef1e031e8d0, type: 3}
-  - name: PlayerStep
-    clip: {fileID: 8300000, guid: fcf1d4c1bde398d45a1b7d49a45cbc4d, type: 3}
+  unlockLevelAudio:
   - name: GetKey
     clip: {fileID: 8300000, guid: caaa1b84b2ad90942b0145e76fb4f433, type: 3}
   - name: KeyUnlock
     clip: {fileID: 8300000, guid: fc85edecc0aaadd4eb014a81c6a4a986, type: 3}
   - name: DoorOpen
     clip: {fileID: 8300000, guid: f3736aa087036c440b7cab5d605e7b7c, type: 3}
-  - name: Click
-    clip: {fileID: 8300000, guid: 65e59af1e98ae6c44b22036a9463fe38, type: 3}
+  enviFeedbackAudio:
+  - name: PlayerStep
+    clip: {fileID: 8300000, guid: fcf1d4c1bde398d45a1b7d49a45cbc4d, type: 3}
   - name: Kick
     clip: {fileID: 8300000, guid: 66a5cb34ba2e3d74b8e7ce11fadbd60c, type: 3}
   bgmSource: {fileID: 2472303211536311730}
   sfxSource: {fileID: 2806215877405236271}
+  playerVoiceSource: {fileID: 0}
+  unlockLevelSource: {fileID: 0}
+  enviFeedbackSource: {fileID: 0}
 --- !u!114 &8179155808016206764
 MonoBehaviour:
   m_ObjectHideFlags: 0

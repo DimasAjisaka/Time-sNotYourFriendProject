@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour {
             HandleObstacle(hit.collider.gameObject, direction);
             yield break;
         }
-        AudioManager.instance.PlaySFX("PlayerStep");
+        AudioManager.instance.PlayEnviFeedback("PlayerStep");
         while (elapsedTime < timeToMove) {
             transform.position = Vector3.Lerp(origPos, targetPos, (elapsedTime / timeToMove));
             elapsedTime += Time.deltaTime;
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour {
 
     private IEnumerator PushObstacle(GameObject obstacle, Vector3 direction) {
         Debug.Log(direction);
-        AudioManager.instance.PlaySFX("Kick");
+        AudioManager.instance.PlayEnviFeedback("Kick");
         Vector3 originalPosition = obstacle.transform.position;
         Vector3 targetPosition = originalPosition + direction; // Adjust direction as needed
         float pushTime = 0.2f; // Adjust as needed
