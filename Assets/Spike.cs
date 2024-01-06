@@ -57,6 +57,7 @@ public class Spike : MonoBehaviour
     {
         if (isTrapActive)
         {
+            AudioManager.instance.PlayPlayerVoice("PlayerHurt");
             TimeManager.instance.timer -= timeDamage;
             Debug.Log("HIT SPIKE WOY");
         }
