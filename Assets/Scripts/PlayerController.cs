@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-    private bool isMoving = false;
+    public bool isMoving = false;
     private Vector3 origPos, targetPos;
     [SerializeField] private float timeToMove = 0.2f;
     public LayerMask envLayer; // Layer for obstacles
