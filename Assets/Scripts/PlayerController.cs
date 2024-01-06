@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private IEnumerator MovePlayer(Vector3 direction) {
+        onPlayerMove?.Invoke();
         isMoving = true;
 
         float elapsedTime = 0;
@@ -49,8 +50,6 @@ public class PlayerController : MonoBehaviour {
             yield break;
         }
         AudioManager.instance.PlayEnviFeedback("PlayerStep");
-
-        onPlayerMove?.Invoke();
 
         while (elapsedTime < timeToMove) {
             transform.position = Vector3.Lerp(origPos, targetPos, (elapsedTime / timeToMove));
