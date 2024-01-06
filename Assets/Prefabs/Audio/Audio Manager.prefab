@@ -722,7 +722,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f3736aa087036c440b7cab5d605e7b7c, type: 3}
   enviFeedbackAudio:
   - name: PlayerStep
-    clip: {fileID: 8300000, guid: fcf1d4c1bde398d45a1b7d49a45cbc4d, type: 3}
+    clip: {fileID: 8300000, guid: 6f1f0f153cbbbe048878aa92079e9a4a, type: 3}
   - name: Kick
     clip: {fileID: 8300000, guid: 66a5cb34ba2e3d74b8e7ce11fadbd60c, type: 3}
   bgmSource: {fileID: 2472303211536311730}
