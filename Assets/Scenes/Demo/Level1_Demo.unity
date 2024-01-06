@@ -2020,7 +2020,7 @@ GameObject:
   - component: {fileID: 515438236}
   - component: {fileID: 515438239}
   - component: {fileID: 515438238}
-  - component: {fileID: 515438237}
+  - component: {fileID: 515438240}
   m_Layer: 0
   m_Name: Portal1
   m_TagString: Untagged
@@ -2043,19 +2043,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &515438237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515438235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c71a796aa93118246af91a9be72009d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destinationPortal: {fileID: 678528919}
 --- !u!60 &515438238
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2159,6 +2146,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &515438240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515438235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71a796aa93118246af91a9be72009d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationPortal: {fileID: 678528919}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2617,6 +2617,7 @@ GameObject:
   - component: {fileID: 678528919}
   - component: {fileID: 678528921}
   - component: {fileID: 678528920}
+  - component: {fileID: 678528922}
   m_Layer: 0
   m_Name: Portal2
   m_TagString: Untagged
@@ -2742,6 +2743,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &678528922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678528918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71a796aa93118246af91a9be72009d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationPortal: {fileID: 515438236}
 --- !u!1 &744367723
 GameObject:
   m_ObjectHideFlags: 0
@@ -4919,11 +4933,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6781219576056193917, guid: 2a40dfa7eb163cd48b156f952366c6bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6781219576056193917, guid: 2a40dfa7eb163cd48b156f952366c6bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 6781219576056193917, guid: 2a40dfa7eb163cd48b156f952366c6bf, type: 3}
       propertyPath: m_LocalPosition.z
