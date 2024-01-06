@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     private PlayerController playerController;
+    [SerializeField] private int indexNextLevel = 1;
 
     private void Awake()
     {
@@ -30,7 +31,6 @@ public class Door : MonoBehaviour
 
     private void OpenDoor()
     {
-        //script untuk pindah scene atau level
-        Debug.Log("Door Opened");
+        SceneManager.LoadScene(indexNextLevel);
     }
 }

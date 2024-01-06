@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour {
     public bool isMoving = false;
     private Vector3 origPos, targetPos;
     [SerializeField] private float timeToMove = 0.2f;
+    [SerializeField] private float pushBoxTime = 0.2f;
     public LayerMask envLayer; // Layer for obstacles
     public bool isKeyPicked = false;
 
@@ -76,7 +77,7 @@ public class PlayerController : MonoBehaviour {
         AudioManager.instance.PlayEnviFeedback("Kick");
         Vector3 originalPosition = obstacle.transform.position;
         Vector3 targetPosition = originalPosition + direction; // Adjust direction as needed
-        float pushTime = 0.2f; // Adjust as needed
+        float pushTime = pushBoxTime; // Adjust as needed
         float pushElapsedTime = 0;
         obstacle.GetComponent<BoxCollider2D>().enabled = false;
         // Raycast to check for obstacles in the push direction

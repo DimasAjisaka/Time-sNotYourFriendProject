@@ -51,5 +51,4 @@ public class UIManager : MonoBehaviour
         attackButton.interactable = isRolling == false;
         escapeButton.interactable = isRolling == false;
     }
-
 }

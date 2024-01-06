@@ -3506,7 +3506,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.005797863, y: -0.0028989315}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3517,7 +3517,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 0.22308013, y: 0.2274985}
   m_EdgeRadius: 0
 --- !u!114 &1670940610
 MonoBehaviour:
@@ -4217,7 +4217,6 @@ GameObject:
   - component: {fileID: 2106977456}
   - component: {fileID: 2106977455}
   - component: {fileID: 2106977454}
-  - component: {fileID: 2106977453}
   m_Layer: 6
   m_Name: Enemy (1)
   m_TagString: Enemy
@@ -4225,18 +4224,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2106977453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106977452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bae0ff612b20af74dbda54d953486cfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &2106977454
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4390,6 +4377,14 @@ PrefabInstance:
     - target: {fileID: 6781219576056193917, guid: 2a40dfa7eb163cd48b156f952366c6bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043307302992725805, guid: 2a40dfa7eb163cd48b156f952366c6bf, type: 3}
+      propertyPath: timeToMove
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043307302992725805, guid: 2a40dfa7eb163cd48b156f952366c6bf, type: 3}
+      propertyPath: pushBoxTime
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
