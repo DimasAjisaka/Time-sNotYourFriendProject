@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class EnemyGridPatrol : MonoBehaviour
 {
+    public enum EnemyType {Static, Patrol }
+
+    private EnemyType enemyType;
     public Vector3[] patrolPoints;
     public float moveSpeed = 3f;
     public float gridCellSize = 1f;
@@ -10,14 +13,21 @@ public class EnemyGridPatrol : MonoBehaviour
     private int currentPatrolIndex = 0;
     private Vector3 targetPosition;
 
-    public PlayerController playerController;
+    private PlayerController playerController;
+
+    private void Awake()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+    }
 
     void Start()
     {
+        enemyType = EnemyType.Patrol;
+
         if (patrolPoints.Length < 2)
         {
-            Debug.LogError("Error: Patrol Points should be at least 2 for enemy patrol.");
             enabled = false;
+            enemyType = EnemyType.Static;
             return;
         }
 
@@ -34,7 +44,7 @@ public class EnemyGridPatrol : MonoBehaviour
 
     void Update()
     {
-        if (playerController.isMoving)
+        if (playerController.isMoving && enemyType == EnemyType.Patrol)
         {
             MoveOneGridCell();
         }
