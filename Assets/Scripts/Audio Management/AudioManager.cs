@@ -11,13 +11,15 @@ public class AudioManager : MonoBehaviour {
         sfxAudio, 
         playerVoiceAudio,
         unlockLevelAudio,
-        enviFeedbackAudio;
+        enviFeedbackAudio,
+        heartBeatAudio;
     public AudioSource 
         bgmSource, 
         sfxSource, 
         playerVoiceSource,
         unlockLevelSource,
-        enviFeedbackSource;
+        enviFeedbackSource,
+        heartBeatSource;
 
     private void Awake() {
         if (instance == null) {
@@ -69,5 +71,12 @@ public class AudioManager : MonoBehaviour {
         if (enviFeedback == null) {
             Debug.Log("SFX Not Found!");
         } else { enviFeedbackSource.PlayOneShot(enviFeedback.clip); }
+    }
+
+    public void PlayHeartBeat(string name) {
+        Sound heartBeat = Array.Find(heartBeatAudio, x => x.name == name);
+        if (heartBeat == null) {
+            Debug.Log("SFX Not Found!");
+        } else { heartBeatSource.PlayOneShot(heartBeat.clip); }
     }
 }
