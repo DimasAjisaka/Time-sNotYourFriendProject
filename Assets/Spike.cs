@@ -70,10 +70,13 @@ public class Spike : MonoBehaviour
 
 
     private void SpikeOnOff() {
-        StartCoroutine(SpikeOnOffIenum());
+        if(spikeType == SpikeType.Active) {
+            StartCoroutine(SpikeOnOffIenum());
+        }
     }
+
     IEnumerator SpikeOnOffIenum() {
-        if (spikeType == SpikeType.Active & moveCount == 0) {
+        if (moveCount == 0) {
             _col.enabled = false;
             _renderer.color = Color.white;
             moveCount++;

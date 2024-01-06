@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour {
     }
 
     private IEnumerator MovePlayer(Vector3 direction) {
-        onPlayerMove?.Invoke();
         isMoving = true;
 
         float elapsedTime = 0;
@@ -51,6 +50,8 @@ public class PlayerController : MonoBehaviour {
         }
         AudioManager.instance.PlayEnviFeedback("PlayerStep");
 
+        onPlayerMove?.Invoke();
+
         while (elapsedTime < timeToMove) {
             transform.position = Vector3.Lerp(origPos, targetPos, (elapsedTime / timeToMove));
             elapsedTime += Time.deltaTime;
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour {
     }
     public IEnumerator KnockBackPlayer(Vector3 direction)
     {
+        onPlayerMove?.Invoke();
         isMoving = true;
         float elapsedTime = 0;
         origPos = transform.position;
@@ -122,7 +124,7 @@ public class PlayerController : MonoBehaviour {
             pushElapsedTime += Time.deltaTime;
             yield return null;
         }
-
+        onPlayerMove?.Invoke();
         obstacle.transform.position = targetPosition;
         isMoving = false;
     }
