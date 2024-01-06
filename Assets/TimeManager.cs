@@ -42,4 +42,15 @@ public class TimeManager : MonoBehaviour
         cam.DOShakePosition(duration, strength, vibrato, randomness);
     }
 
+    public void CameraShakeDamage() {
+        // Parameters for the shake
+        float duration = 0.3f;
+        float strength = 0.3f;
+        int vibrato = 10;
+        float randomness = 0;
+
+        // Trigger camera shake using DOTween
+        cam.DOShakePosition(duration, strength, vibrato, randomness);
+    }
+
 }

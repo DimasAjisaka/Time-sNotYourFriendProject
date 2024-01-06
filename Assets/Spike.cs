@@ -60,12 +60,11 @@ public class Spike : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (isTrapActive)
-        //{
             AudioManager.instance.PlayPlayerVoice("PlayerHurt");
             TimeManager.instance.timer -= timeDamage;
             Debug.Log("HIT SPIKE WOY");
-        //}
+        TimeManager.instance.CameraShakeDamage();
+
     }
 
 

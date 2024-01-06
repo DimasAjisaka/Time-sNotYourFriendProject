@@ -89,6 +89,8 @@ public class GameManager : MonoBehaviour {
 
                 AudioManager.instance.PlayPlayerVoice("PlayerLose");
                 playerController.KnockPlayer();
+                TimeManager.instance.CameraShakeDamage();
+
             } else {
                 StartCoroutine(RollingDice(0));
                 yield break;
@@ -122,6 +124,8 @@ public class GameManager : MonoBehaviour {
 
                 AudioManager.instance.PlayPlayerVoice("PlayerLose");
                 playerController.KnockPlayer();
+                TimeManager.instance.CameraShakeDamage();
+
             } else {
                 StartCoroutine(RollingDice(1));
                 yield break;

@@ -3099,7 +3099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53887be63af88eb44b162799fe48ffe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 15
+  timer: 50
   startShaking: 10
 --- !u!4 &1116111308
 Transform:
