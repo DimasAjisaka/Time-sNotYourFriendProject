@@ -4595,7 +4595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 30
   startShaking: 10
-  hp: {fileID: 0}
+  hp: {fileID: 1194336814}
 --- !u!4 &1116111308
 Transform:
   m_ObjectHideFlags: 0
@@ -4611,6 +4611,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1194336814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3310646079655196874, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
+  m_PrefabInstance: {fileID: 1552874050}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1218794781 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3969843899781461199, guid: ec01fec41e5267d428028de54c224e11, type: 3}
