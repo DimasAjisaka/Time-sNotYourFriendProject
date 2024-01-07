@@ -257,6 +257,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19320131}
   m_CullTransparentMesh: 1
+--- !u!114 &70450719 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3404413331405674792, guid: 304ae76a5c9347241b60b924141385ae, type: 3}
+  m_PrefabInstance: {fileID: 1611105076}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10220530ca1d4a84bb4905c35f9ffe3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &70450721 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8179155808016206764, guid: 304ae76a5c9347241b60b924141385ae, type: 3}
+  m_PrefabInstance: {fileID: 1611105076}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dae949340fec794cbbefed52de7e50e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &119038780
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,7 +751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -767,7 +789,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 70450721}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: BgmVolume
         m_Mode: 1
@@ -6305,7 +6327,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 70450719}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySFX
         m_Mode: 5
@@ -8202,7 +8224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -8240,7 +8262,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 70450721}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: SfxVolume
         m_Mode: 1
@@ -10739,7 +10761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -10777,7 +10799,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 70450721}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: MasterVolume
         m_Mode: 1
