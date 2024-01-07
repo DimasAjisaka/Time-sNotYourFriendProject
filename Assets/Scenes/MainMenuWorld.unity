@@ -10004,7 +10004,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dimas Ajisaka Kurniawan \r\nAlif Nimatulloh\r\nMuhamad Rizki Ramadhan"
+  m_text: "Alif Nimatulloh\r\nDimas Ajisaka Kurniawan \r\nMuhamad Rizki Ramadhan"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10110,9 +10110,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c042a5a2c083ace4985838ea979f4262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyShuffle: {fileID: 0}
+  enemyBatu: {fileID: 0}
+  enemyGunting: {fileID: 0}
+  enemyKertas: {fileID: 0}
   playerController: {fileID: 731400407}
   uiManager: {fileID: 1862113454}
   diceRollingTime: 1
+  winTime: 10
+  loseTime: 10
   state: 0
   scene: 0
 --- !u!4 &1486107287
@@ -11976,6 +11982,7 @@ MonoBehaviour:
   startButton: {fileID: 1083055355}
   restartPanel: {fileID: 1527397724}
   battlePanel: {fileID: 1962371528}
+  battlePanelRect: {fileID: 0}
   attackButton: {fileID: 1587962591}
   escapeButton: {fileID: 369608842}
 --- !u!114 &1862113455
