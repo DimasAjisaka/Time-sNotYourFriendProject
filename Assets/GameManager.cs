@@ -7,6 +7,8 @@ public enum GameState {
     WAIT, START, BATTLE, GAMEOVER
 }
 public class GameManager : MonoBehaviour {
+    public enum SceneActive { MainMenu, Battle }
+
     public static GameManager instance;
     public PlayerController playerController;
     public UIManager uiManager;
@@ -14,6 +16,8 @@ public class GameManager : MonoBehaviour {
 
     public GameState state;
     public static event Action<GameState> OnGameStateChanged;
+
+    [SerializeField] private SceneActive scene;
 
     private bool isRollingDice = false;
 
@@ -23,6 +27,14 @@ public class GameManager : MonoBehaviour {
 
     void Start() {
         UpdateGameState(GameState.WAIT);
+
+        if (scene == SceneActive.MainMenu) {
+            AudioManager.instance.bgmSource.Stop();
+            AudioManager.instance.PlayBGM("MainMenu");
+        } else {
+            AudioManager.instance.bgmSource.Stop();
+            AudioManager.instance.PlayBGM("Battle");
+        }
     }
 
     public void UpdateGameState(GameState newState) {

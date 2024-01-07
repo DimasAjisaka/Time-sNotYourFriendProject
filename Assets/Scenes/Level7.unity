@@ -4234,6 +4234,7 @@ MonoBehaviour:
   uiManager: {fileID: 797258876}
   diceRollingTime: 1
   state: 0
+  scene: 1
 --- !u!4 &1486107287
 Transform:
   m_ObjectHideFlags: 0

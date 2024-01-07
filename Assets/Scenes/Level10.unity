@@ -3100,6 +3100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 30
+  startShaking: 10
 --- !u!4 &1116111308
 Transform:
   m_ObjectHideFlags: 0
@@ -3514,6 +3515,7 @@ MonoBehaviour:
   uiManager: {fileID: 797258876}
   diceRollingTime: 1
   state: 0
+  scene: 1
 --- !u!4 &1486107287
 Transform:
   m_ObjectHideFlags: 0
@@ -4122,6 +4124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indexNextLevel: 0
+  nextLevelUnlockString: 
 --- !u!61 &1824701219
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class Door : MonoBehaviour
     private void Awake()
     {
         playerController = FindAnyObjectByType<PlayerController>();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

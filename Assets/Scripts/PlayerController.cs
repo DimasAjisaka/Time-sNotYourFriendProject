@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour {
     private Collider2D currentEnemy;
     public static event Action onPlayerMove;
     private void Start() {
-        AudioManager.instance.PlayBGM("Battle");
+        //AudioManager.instance.bgmSource.Stop();
+        //AudioManager.instance.PlayBGM("Battle");
     }
 
     private void Update() {
