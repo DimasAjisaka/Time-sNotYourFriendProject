@@ -477,6 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gateToOpen: {fileID: 965872294}
+  pushedSprite: {fileID: 0}
 --- !u!61 &224584762
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -649,6 +650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gateToOpen: {fileID: 881276416}
+  pushedSprite: {fileID: 0}
 --- !u!61 &276896502
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2499,6 +2501,10 @@ PrefabInstance:
     - target: {fileID: 3119293525512721485, guid: 7fe1ba0650875524d9356089e5ee320b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947057765013985153, guid: 7fe1ba0650875524d9356089e5ee320b, type: 3}
+      propertyPath: levelName
+      value: Tilemetaforas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
