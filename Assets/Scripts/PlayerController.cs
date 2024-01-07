@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour {
     private Collider2D currentEnemy;
     public static event Action onPlayerMove;
 
+    [SerializeField] private GameObject vfxTrail;
+
     private void Awake() {
         TimeManager.onGameOver += DeathAnimation;
     }
@@ -70,6 +72,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     private IEnumerator MovePlayer(Vector3 direction) {
+        Instantiate(vfxTrail,(transform.position + new Vector3(0f,-0.4f, 0f)), Quaternion.identity);
+
         Teleport.isTeleporting = false;
         isMoving = true;
         ani.SetBool("isWalking", isMoving);
