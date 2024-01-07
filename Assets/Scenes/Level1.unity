@@ -3568,6 +3568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indexNextLevel: 3
+  nextLevelUnlockString: Level2
 --- !u!61 &1824701219
 BoxCollider2D:
   m_ObjectHideFlags: 0

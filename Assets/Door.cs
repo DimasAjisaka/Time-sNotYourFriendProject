@@ -7,7 +7,7 @@ public class Door : MonoBehaviour
 {
     private PlayerController playerController;
     [SerializeField] private int indexNextLevel = 1;
-
+    [SerializeField] private string nextLevelUnlockString;
     private void Awake()
     {
         playerController = FindAnyObjectByType<PlayerController>();
@@ -32,5 +32,11 @@ public class Door : MonoBehaviour
     private void OpenDoor()
     {
         SceneManager.LoadScene(indexNextLevel);
+        NextLevelUnlock();
+    }
+
+    private void NextLevelUnlock() {
+        PlayerPrefs.SetInt(nextLevelUnlockString, 1); // Unlock level 2
+        PlayerPrefs.Save();
     }
 }

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager instance;
+
     [SerializeField] private TextMeshProUGUI _timerText;
 
     [SerializeField] private GameObject startButton;
@@ -17,6 +19,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button escapeButton;
 
     private void Awake() {
+        instance = this;
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
     }
 
