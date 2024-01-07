@@ -4440,6 +4440,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlaySFX
       objectReference: {fileID: 0}
+    - target: {fileID: 3571799275853475611, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 69323823}
+    - target: {fileID: 3571799275853475611, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFX
+      objectReference: {fileID: 0}
     - target: {fileID: 3833724562646666205, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4448,9 +4456,33 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlaySFX
       objectReference: {fileID: 0}
+    - target: {fileID: 3880292514967581855, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1486107286}
+    - target: {fileID: 3880292514967581855, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 69323823}
+    - target: {fileID: 3880292514967581855, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RollDiceBattle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880292514967581855, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySFX
+      objectReference: {fileID: 0}
     - target: {fileID: 4624387624526877417, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
       propertyPath: m_Name
       value: Canvas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699887531708909898, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 69323823}
+    - target: {fileID: 4699887531708909898, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySFX
       objectReference: {fileID: 0}
     - target: {fileID: 6949719501293552096, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
       propertyPath: m_Pivot.x
@@ -4531,6 +4563,22 @@ PrefabInstance:
     - target: {fileID: 6949719501293552096, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239297908013690924, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1486107286}
+    - target: {fileID: 8239297908013690924, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 69323823}
+    - target: {fileID: 8239297908013690924, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RollDiceEscape
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239297908013690924, guid: 94384e8b6e0e62941b520ce1a12389a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySFX
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
