@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject startButton;
     [SerializeField] private GameObject restartPanel;
     [SerializeField] private GameObject battlePanel;
+    [SerializeField] private RectTransform battlePanelRect;
 
     [SerializeField] private Button attackButton;
     [SerializeField] private Button escapeButton;
@@ -33,13 +35,26 @@ public class UIManager : MonoBehaviour
 
     private void GameManagerOnGameStateChanged(GameState state) {
         startButton.SetActive(state == GameState.WAIT);
-
         _timerText.gameObject.SetActive(state == GameState.START || state == GameState.BATTLE);
-
         restartPanel.SetActive(state == GameState.GAMEOVER);
 
-        battlePanel.SetActive(state == GameState.BATTLE);
+
+        if(state == GameState.BATTLE) {
+            GameManager.instance.ZoomInCamera();
+            battlePanel.SetActive(true);
+            battlePanelRect.DOAnchorPosY(0f, 1f)
+                           .From(new Vector2(0f, -1100f))
+                           .SetEase(Ease.OutQuint);
+        }
     }
+
+    public void BattlePanelExit() {
+        battlePanelRect.DOAnchorPosY(-1100f, 2f)
+                       .From(new Vector2(0f, 0f))
+                       .SetEase(Ease.InQuint)
+                       .OnComplete(() => battlePanel.SetActive(false));
+    }
+
 
     public void StartButtonClicked() {
         GameManager.instance.UpdateGameState(GameState.START);
