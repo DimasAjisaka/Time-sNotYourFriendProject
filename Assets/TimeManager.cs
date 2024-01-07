@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class TimeManager : MonoBehaviour {
     public static TimeManager instance;
@@ -11,6 +12,8 @@ public class TimeManager : MonoBehaviour {
     private Camera cam;
 
     private bool isShaking = false;
+
+    public static event Action onGameOver;
 
     private void Awake() {
         instance = this;
@@ -34,6 +37,7 @@ public class TimeManager : MonoBehaviour {
             if (timer <= 0) {
                 GameManager.instance.UpdateGameState(GameState.GAMEOVER);
                 AudioManager.instance.PlayPlayerVoice("PlayerDeath");
+                onGameOver?.Invoke();
             }
         }
     }
