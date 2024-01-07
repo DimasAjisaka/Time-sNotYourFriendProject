@@ -8,6 +8,7 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
             gateToOpen.SetActive(false);
+        AudioManager.instance.PlayEnviFeedback("Plate");
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
