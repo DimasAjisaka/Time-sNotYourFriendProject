@@ -860,6 +860,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 14222fa7efb1f9c4088d504e335da8bf, type: 3}
   - name: Plate
     clip: {fileID: 8300000, guid: 13bac6bbf9eb8a84a9ba4473136c6393, type: 3}
+  - name: Teleport
+    clip: {fileID: 8300000, guid: 281316b680aad444e84f5209379ddbb9, type: 3}
   heartBeatAudio:
   - name: Slow
     clip: {fileID: 8300000, guid: b9d10bd5b8252ed4fb84bfa83ef3fa6a, type: 3}
