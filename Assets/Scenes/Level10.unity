@@ -4330,7 +4330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indexNextLevel: 0
-  nextLevelUnlockString: 
+  nextLevelUnlockString: MainMenuWorld
 --- !u!61 &1824701219
 BoxCollider2D:
   m_ObjectHideFlags: 0
