@@ -4,11 +4,13 @@ using System.Threading;
 using UnityEngine;
 using DG.Tweening;
 using System;
+using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour {
     public static TimeManager instance;
     public float timer;
     public float startShaking = 10f;
+    public Slider hp;
     private Camera cam;
 
     private bool isShaking = false;
