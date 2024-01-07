@@ -53,17 +53,28 @@
     <UnityVersion>2022.3.6f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.6f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.6f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\Scene\LoadScene.cs" />
+    <Compile Include="Assets\EnemyGridPatrol.cs" />
+    <Compile Include="Assets\LevelManager.cs" />
     <Compile Include="Assets\UIManager.cs" />
+    <Compile Include="Assets\Spike.cs" />
+    <Compile Include="Assets\Scripts\Scene\PauseMenu.cs" />
+    <Compile Include="Assets\Obstacle.cs" />
     <Compile Include="Assets\Scripts\Audio Management\AudioController.cs" />
+    <Compile Include="Assets\SetActivePlate.cs" />
     <Compile Include="Assets\Scripts\Audio Management\Sound.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\Collectable.cs" />
+    <Compile Include="Assets\LevelIndicator.cs" />
+    <Compile Include="Assets\Teleport.cs" />
+    <Compile Include="Assets\MenuManager.cs" />
+    <Compile Include="Assets\PressurePlate.cs" />
     <Compile Include="Assets\Key.cs" />
     <Compile Include="Assets\TimeManager.cs" />
     <Compile Include="Assets\Scripts\Audio Management\AudioManager.cs" />
@@ -345,11 +356,11 @@
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.6f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
