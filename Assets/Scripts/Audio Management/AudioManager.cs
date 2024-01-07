@@ -43,10 +43,6 @@ public class AudioManager : MonoBehaviour {
             bgmSource.loop = true;
             bgmSource.Play();
         }
-
-        if (PauseMenu.GameIsPaused) {
-            bgmSource.pitch *= .5f;
-        }
     }
 
     public void PlaySFX(string name) {

@@ -11,8 +11,10 @@ public class PauseMenu : MonoBehaviour {
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
+            AudioManager.instance.PlaySFX("Click");
             if (GameIsPaused) {
                 Resume();
+                SettingPanel.SetActive(false);
             } else {
                 Pause();
             }
