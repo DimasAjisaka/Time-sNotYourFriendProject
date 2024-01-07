@@ -1,8 +1,15 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour {
+    private Animator ani;
+    private SpriteRenderer sprite;
+    private bool isFlipped = false;
+    [SerializeField] private float spriteSpeedRotation = 0.5f;
+
+
     public bool isMoving = false;
     private Vector3 origPos, targetPos, lastPos;
     public float timeToMove = 0.2f;
@@ -12,7 +19,22 @@ public class PlayerController : MonoBehaviour {
 
     private Collider2D currentEnemy;
     public static event Action onPlayerMove;
+
+    private void Awake() {
+        TimeManager.onGameOver += DeathAnimation;
+    }
+
+    private void OnDestroy() {
+        TimeManager.onGameOver -= DeathAnimation;
+    }
+
+    private void DeathAnimation() {
+        ani.SetTrigger("Death");
+    }
+
     private void Start() {
+        ani = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
         //AudioManager.instance.bgmSource.Stop();
         //AudioManager.instance.PlayBGM("Battle");
     }
@@ -25,18 +47,32 @@ public class PlayerController : MonoBehaviour {
         if (GameManager.instance.state == GameState.START) {
             if (Input.GetKeyDown(KeyCode.W) && !isMoving)
                 StartCoroutine(MovePlayer(Vector3.up));
-            if (Input.GetKeyDown(KeyCode.A) && !isMoving)
+            if (Input.GetKeyDown(KeyCode.A) && !isMoving) {
                 StartCoroutine(MovePlayer(Vector3.left));
+                //sprite.flipX = true;
+                if(isFlipped == false) {
+                    sprite.gameObject.transform.DORotate(new Vector2(0f, 180f), spriteSpeedRotation);
+                    isFlipped = true;
+                }
+            }
             if (Input.GetKeyDown(KeyCode.S) && !isMoving)
                 StartCoroutine(MovePlayer(Vector3.down));
-            if (Input.GetKeyDown(KeyCode.D) && !isMoving)
+            if (Input.GetKeyDown(KeyCode.D) && !isMoving) {
                 StartCoroutine(MovePlayer(Vector3.right));
+                //sprite.flipX = false;
+                if (isFlipped == true) {
+                    sprite.gameObject.transform.DORotate(new Vector2(0f, 0f), spriteSpeedRotation);
+                    isFlipped = false;
+                }
+            }
+
         }
     }
 
     private IEnumerator MovePlayer(Vector3 direction) {
         Teleport.isTeleporting = false;
         isMoving = true;
+        ani.SetBool("isWalking", isMoving);
 
         float elapsedTime = 0;
 
@@ -62,6 +98,7 @@ public class PlayerController : MonoBehaviour {
         lastPos = origPos;
         transform.position = targetPos;
         isMoving = false;
+        ani.SetBool("isWalking", isMoving);
     }
     public IEnumerator KnockBackPlayer(Vector3 direction)
     {

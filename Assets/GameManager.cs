@@ -146,6 +146,15 @@ public class GameManager : MonoBehaviour {
         isRollingDice = false;
         uiManager.EnableDisableBattleButton(isRollingDice);
     }
+
+
+    public void RockPaperScissorsBattle() {
+        StartCoroutine(RollingDice(0));
+    }
+
+    public void RockPaperScissorsEscape() {
+        StartCoroutine(RollingDice(1));
+    }
 }
 
 
