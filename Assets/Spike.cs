@@ -9,6 +9,7 @@ public class Spike : MonoBehaviour
     [SerializeField] float timeDamage = 10f;
     [SerializeField] int moveToActive;
     private SpriteRenderer _renderer;
+    private Animator _animator;
     private Collider2D _col;
     private PlayerController playerController;
 
@@ -21,6 +22,7 @@ public class Spike : MonoBehaviour
         _renderer = GetComponent<SpriteRenderer>();
         _col = GetComponent<Collider2D>();
         playerController = FindObjectOfType<PlayerController>();
+        _animator = GetComponent<Animator>();
 
         PlayerController.onPlayerMove += SpikeOnOff;
     }
@@ -77,13 +79,15 @@ public class Spike : MonoBehaviour
     IEnumerator SpikeOnOffIenum() {
         if (moveCount == 0) {
             _col.enabled = false;
-            _renderer.color = Color.white;
+            //_renderer.color = Color.white;
+            _animator.SetBool("isActive", false);
             moveCount++;
             yield break;
         } else {
             yield return new WaitForSeconds(playerController.timeToMove);
             _col.enabled = true;
-            _renderer.color = Color.red;
+            //_renderer.color = Color.red;
+            _animator.SetBool("isActive", true);
             moveCount = 0;
         }
     }
